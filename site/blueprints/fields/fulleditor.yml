@@ -1,0 +1,15 @@
+label:
+    en: Text
+    el: Κείμενο
+type: markdown
+invisibles: true
+size: medium
+buttons:
+  - headlines
+    - h2
+    - h3
+    - h4
+  - bold
+  - italic
+  - blockquote
+  - pagelink

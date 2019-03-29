@@ -1,0 +1,14 @@
+
+@function rem($val) {
+    @if type-of($val) == number {
+        @if unit($val) == 'px' {
+            @return ($val / 16px) * 1rem;
+        } @else if unitless($val) {
+            @return ($val / 16) * 1rem;
+        } @else {
+            @return $val;
+        }
+    } @else {
+        @return $val;
+    }
+}

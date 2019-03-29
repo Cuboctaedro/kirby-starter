@@ -1,0 +1,15 @@
+$flex-wrap-settings: (
+    'responsive': true,
+    'hover':      false,
+    'focus':      false,
+    'classname':  'flex',
+    'property':   'flex-wrap'
+);
+
+$flex-wrap-values: (
+    'nowrap':       nowrap,
+    'wrap':         wrap,
+    'wrap-reverse': wrap-reverse
+);
+
+@include utility($flex-wrap-settings, $flex-wrap-values);

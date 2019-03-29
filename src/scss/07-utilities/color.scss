@@ -1,0 +1,10 @@
+$color-settings: (
+    'responsive': true,
+    'hover': true,
+    'focus': true,
+    'classname' : 'c',
+    'property' : 'color'
+);
+
+
+@include utility($color-settings, $colors);

@@ -1,0 +1,10 @@
+$font-family-settings: (
+    'responsive': false,
+    'hover': false,
+    'focus': false,
+    'classname' : 'ff',
+    'property' : 'font-family'
+);
+
+
+@include utility($font-family-settings, $font-families);

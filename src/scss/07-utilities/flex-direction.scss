@@ -1,0 +1,16 @@
+$flex-direction-settings: (
+    'responsive': true,
+    'hover':      false,
+    'focus':      false,
+    'classname':  'flex',
+    'property':   'flex-direction'
+);
+
+$flex-direction-values: (
+    'row':            row,
+    'row-reverse':    row-reverse,
+    'column':         column,
+    'column-reverse': column-reverse
+);
+
+@include utility($flex-direction-settings, $flex-direction-values);

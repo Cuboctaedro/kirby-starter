@@ -1,0 +1,14 @@
+$font-style-settings: (
+    'responsive': false,
+    'hover': false,
+    'focus': false,
+    'classname' : 'fs',
+    'property' : 'font-style'
+);
+
+$font-style-values: (
+    'regular' : normal,
+    'italic' : italic
+);
+
+@include utility($font-style-settings, $font-style-values);

@@ -1,0 +1,10 @@
+$font-size-settings: (
+    'responsive': true,
+    'hover': false,
+    'focus': false,
+    'classname' : 'fs',
+    'property' : 'font-size'
+);
+
+
+@include utility($font-size-settings, $font-sizes);

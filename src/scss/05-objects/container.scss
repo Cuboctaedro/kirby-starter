@@ -1,0 +1,31 @@
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    @include mq('sm') {
+        width: rem(map-get($media-queries, 'sm'));
+    }
+    @include mq('md') {
+        width: rem(map-get($media-queries, 'md'));
+    }
+    @include mq('lg') {
+        width: rem(map-get($media-queries, 'lg') - 24px);
+    }
+    @include mq('xl') {
+        width: rem(map-get($media-queries, 'xl') - 24px);
+    }
+
+}
+
+.container--pad {
+    padding-left: rem(map-get($gutter, 'base') / 2);
+    padding-right: rem(map-get($gutter, 'base') / 2);
+    @each $key, $val in $media-queries {
+        @if map-get($gutter, $key) {
+            @include mq($key) {
+                padding-left: rem(map-get($gutter, $key) / 2);
+                padding-right: rem(map-get($gutter, $key) / 2);
+            }
+        }
+    }
+}

@@ -1,0 +1,16 @@
+$display-settings: (
+    'responsive': true,
+    'hover': false,
+    'focus': false,
+    'property' : 'display'
+);
+
+$display-values: (
+    'block' : block,
+    'inline-block' : inline-block,
+    'inline' : inline,
+    'flex' : flex,
+    'remove' : none
+);
+
+@include utility($display-settings, $display-values);

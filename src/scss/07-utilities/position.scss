@@ -1,0 +1,15 @@
+$position-settings: (
+    'responsive': true,
+    'hover': false,
+    'focus': false,
+    'property' : 'position'
+);
+
+$position-values: (
+    'static' : static,
+    'fixed' : fixed,
+    'absolute' : absolute,
+    'relative' : relative
+);
+
+@include utility($position-settings, $position-values);

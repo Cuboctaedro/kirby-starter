@@ -1,0 +1,15 @@
+$float-settings:  (
+    'responsive': true,
+    'hover':      false,
+    'focus':      false,
+    'classname':  'float',
+    'property':   'float'
+);
+
+$float-values:    (
+    'left':       left,
+    'right':      right,
+    'none':       none
+);
+
+@include utility($float-settings, $float-values);

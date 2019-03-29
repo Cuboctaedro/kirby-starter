@@ -1,0 +1,4 @@
+@mixin typesize($text, $lead) {
+    font-size: rem($text);
+    line-height: $lead / $text;
+}

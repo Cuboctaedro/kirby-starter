@@ -1,0 +1,6 @@
+.heading-line {
+    font-weight: 700;
+    @include typesize(20, 24);
+    padding-bottom: 4px;
+    border-bottom: 2px solid map-get($colors, 'grey-light');
+}

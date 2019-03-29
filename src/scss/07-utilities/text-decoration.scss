@@ -1,0 +1,15 @@
+$text-decoration-settings: (
+    'responsive': false,
+    'hover': false,
+    'focus': false,
+    'classname' : 'td',
+    'property' : 'text-decoration'
+);
+
+$text-decoration-values: (
+    'underline' : underline,
+    'strike' : line-through,
+    'none' : none
+);
+
+@include utility($text-decoration-settings, $text-decoration-values);

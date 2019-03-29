@@ -1,0 +1,18 @@
+$align-content-settings:  (
+    'responsive': true,
+    'hover':      false,
+    'focus':      false,
+    'classname':  'content',
+    'property':   'align-content'
+);
+
+$align-content-values:    (
+    'between': space-between,
+    'start':   flex-start,
+    'center':  center,
+    'end':     flex-end,
+    'around':  space-around
+
+);
+
+@include utility($align-content-settings, $align-content-values);

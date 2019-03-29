@@ -1,0 +1,10 @@
+$background-color-settings: (
+    'responsive': true,
+    'hover': true,
+    'focus': true,
+    'classname' : 'bg',
+    'property' : 'background-color'
+);
+
+
+@include utility($background-color-settings, $colors);

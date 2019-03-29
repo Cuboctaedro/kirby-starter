@@ -1,0 +1,11 @@
+title: Image
+
+accept:
+    mime: image/jpeg, image/png, image/svg+xml
+
+fields:
+    caption:
+        extends: fields/plaineditor
+        label:
+            en: Caption
+            el: Λεζάντα

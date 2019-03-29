@@ -1,0 +1,17 @@
+// Centers the contents of the element horizontaly, verticaly or in both directions.
+
+.centered-h {
+    display: flex;
+    justify-content: center;
+}
+
+.centered-v {
+    display: flex;
+    align-items: center;
+}
+
+.centered {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

@@ -1,0 +1,49 @@
+$border-width-settings: (
+    'responsive': true,
+    'hover': false,
+    'focus': false,
+    'classname' : 'border',
+    'property' : 'border-width'
+);
+
+@include utility($border-width-settings, $border-widths);
+
+$border-top-width-settings: (
+    'responsive': true,
+    'hover': false,
+    'focus': false,
+    'classname' : 'border-t',
+    'property' : 'border-top-width'
+);
+
+@include utility($border-top-width-settings, $border-widths);
+
+$border-right-width-settings: (
+    'responsive': true,
+    'hover': false,
+    'focus': false,
+    'classname' : 'border-r',
+    'property' : 'border-right-width'
+);
+
+@include utility($border-right-width-settings, $border-widths);
+
+$border-bottom-width-settings: (
+    'responsive': true,
+    'hover': false,
+    'focus': false,
+    'classname' : 'border-b',
+    'property' : 'border-bottom-width'
+);
+
+@include utility($border-bottom-width-settings, $border-widths);
+
+$border-left-width-settings: (
+    'responsive': true,
+    'hover': false,
+    'focus': false,
+    'classname' : 'border-l',
+    'property' : 'border-left-width'
+);
+
+@include utility($border-left-width-settings, $border-widths);

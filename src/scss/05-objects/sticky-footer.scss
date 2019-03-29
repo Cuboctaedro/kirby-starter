@@ -1,0 +1,25 @@
+// Use a layout like the following:
+//
+// <div id="site-body">
+//     <div id="site-header"></div>
+//     <div id="site-main"></div>
+//     <div id="site-footer"></div>
+// </div>
+//
+// The "site-body" element should include the entire layout except off-screen elements with position fixed.
+
+#site-body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+#site-header,
+#site-footer {
+    flex: none;
+}
+
+#site-main {
+    flex: 1 0 auto;
+    width: 100%;
+}

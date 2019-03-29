@@ -1,0 +1,10 @@
+$border-color-settings: (
+    'responsive': false,
+    'hover': true,
+    'focus': true,
+    'classname' : 'border-c',
+    'property' : 'border-color'
+);
+
+
+@include utility($border-color-settings, $colors);

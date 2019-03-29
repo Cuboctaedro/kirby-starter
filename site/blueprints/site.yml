@@ -1,0 +1,32 @@
+title: Site
+
+tabs:
+    content:
+        label:
+            en: Content
+            el: Περιεχόμενο
+        icon: text
+        columns:
+          - width: 2/3
+            sections:
+                homepage:
+                    headline: Home
+                    type: pages
+                    status: all
+                    templates: home
+                    max: 1
+                pages:
+                    headline: Pages
+                    type: pages
+                    status: all
+                    templates: default
+                legal:
+                    headline: Legal Pages
+                    type: pages
+                    status: all
+                    templates: legal
+          - width: 1/3
+            sections:
+                pagefiles:
+                    extends: sections/pagefiles
+    seo: tabs/seo

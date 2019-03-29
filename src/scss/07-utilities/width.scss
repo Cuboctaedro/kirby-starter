@@ -1,0 +1,34 @@
+$width-settings: (
+    'responsive': true,
+    'hover': false,
+    'focus': false,
+    'classname' : 'w',
+    'property' : 'width'
+);
+
+
+@include utility($width-settings, $sizes);
+
+
+$min-width-settings: (
+    'responsive': true,
+    'hover': false,
+    'focus': false,
+    'classname' : 'min-w',
+    'property' : 'min-width'
+);
+
+
+@include utility($min-width-settings, $sizes);
+
+
+$max-width-settings: (
+    'responsive': true,
+    'hover': false,
+    'focus': false,
+    'classname' : 'max-w',
+    'property' : 'max-width'
+);
+
+
+@include utility($max-width-settings, $sizes);

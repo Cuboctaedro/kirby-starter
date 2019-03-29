@@ -1,0 +1,16 @@
+$text-align-settings: (
+    'responsive': true,
+    'hover': false,
+    'focus': false,
+    'classname' : 'ta',
+    'property' : 'text-align'
+);
+
+$text-align-values: (
+    'left' : left,
+    'center' : center,
+    'right' : right,
+    'justify' : justify
+);
+
+@include utility($text-align-settings, $text-align-values);

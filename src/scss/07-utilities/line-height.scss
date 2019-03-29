@@ -1,0 +1,11 @@
+$line-height-settings: (
+    'responsive': true,
+    'hover': false,
+    'focus': false,
+    'classname' : 'lh',
+    'property' : 'line-height',
+    'userem' : false
+);
+
+
+@include utility($line-height-settings, $line-heights);

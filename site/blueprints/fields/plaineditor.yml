@@ -1,0 +1,6 @@
+label:
+    en: Text
+    el: Κείμενο
+type: textarea
+size: small
+buttons: false

@@ -1,0 +1,9 @@
+
+
+@mixin color($color) {
+    color: map-get($colors, $color);
+}
+
+@mixin color-shade($color, $shade) {
+    color: map-get(map-get($shades, $color), $shade);
+}

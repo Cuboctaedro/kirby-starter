@@ -1,0 +1,32 @@
+label:
+    en: Content Blocks
+    el: Μπλοκ περιεχομένου
+type: builder
+fieldsets:
+    textblock:
+        preview:
+            snippet: blocks/textblock
+            css: /assets/app.css
+        fields:
+            text:
+                extends: fields/fulleditor
+    headingblock:
+        preview:
+            snippet: blocks/headingblock
+            css: /assets/app.css
+        label:
+            en: Heading
+            el: Τίτλος
+        fields:
+            heading:
+                type: text
+    subheadingblock:
+        label:
+            en: Subheading
+            el: Υπότιτλος
+        preview:
+            snippet: blocks/subheadingblock
+            css: /assets/app.css
+        fields:
+            subheading:
+                type: text

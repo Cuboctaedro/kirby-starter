@@ -1,0 +1,24 @@
+
+
+@mixin mq($size, $minmax: 'min') {
+    @if map-has-key($media-queries, $size) {
+        @if $minmax == 'min' {
+            @media (min-width: map-get($media-queries, $size)) {
+                @content;
+            }
+        } @else {
+            @media (max-width: map-get($media-queries, $size)) {
+                @content;
+            }
+
+        }
+    }
+}
+
+// @mixin responsive {
+//     @each $key, $val in $media-queries {
+//         @media (min-width: map-get($media-queries, $size)) {
+//             @content;
+//         }
+//     }
+// }

@@ -1,0 +1,16 @@
+$text-transform-settings: (
+    'responsive': false,
+    'hover': false,
+    'focus': false,
+    'classname' : 'tt',
+    'property' : 'text-transform'
+);
+
+$text-transform-values: (
+    'upper' : uppercase,
+    'lower' : lowercase,
+    'title' : capitalize,
+    'none' : none
+);
+
+@include utility($text-transform-settings, $text-transform-values);

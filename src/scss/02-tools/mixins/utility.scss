@@ -1,0 +1,99 @@
+@mixin utility($settings-map, $values-map) {
+
+    $userem: true ;
+
+    @if map_has_key($settings-map, 'userem') and map_get($settings-map, 'userem') == false {
+        $userem: false ;
+    }
+
+    @each $name, $value in $values-map {
+        @if map_has_key($settings-map, 'classname') {
+            .#{ map-get($settings-map, 'classname')}-#{$name} {
+                @if $userem == true {
+                    #{ map-get($settings-map, 'property')} : rem($value) ;
+                } @else {
+                    #{ map-get($settings-map, 'property')} : $value ;
+                }
+            }
+        } @else {
+            .#{$name} {
+                @if $userem == true {
+                    #{ map-get($settings-map, 'property')} : rem($value) ;
+                } @else {
+                    #{ map-get($settings-map, 'property')} : $value ;
+                }
+            }
+        }
+    }
+
+    @if map-get($settings-map, 'responsive') == true {
+        @each $queryname, $queryvalue in $media-queries {
+            @media (min-width: $queryvalue) {
+                @each $name, $value in $values-map {
+                    @if map_has_key($settings-map, 'classname') {
+                        .#{$queryname}__#{ map-get($settings-map, 'classname')}-#{$name} {
+                            @if $userem == true {
+                                #{ map-get($settings-map, 'property')} : rem($value) ;
+                            } @else {
+                                #{ map-get($settings-map, 'property')} : $value ;
+                            }
+                        }
+                    } @else {
+                        .#{$queryname}__#{$name} {
+                            @if $userem == true {
+                                #{ map-get($settings-map, 'property')} : rem($value) ;
+                            } @else {
+                                #{ map-get($settings-map, 'property')} : $value ;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @if map-get($settings-map, 'hover') == true {
+        @each $name, $value in $values-map {
+            @if map_has_key($settings-map, 'classname') {
+                .hover__#{ map-get($settings-map, 'classname')}-#{$name} {
+                    @if $userem == true {
+                        #{ map-get($settings-map, 'property')} : rem($value) ;
+                    } @else {
+                        #{ map-get($settings-map, 'property')} : $value ;
+                    }
+                }
+            } @else {
+                .hover__#{$name} {
+                    @if $userem == true {
+                        #{ map-get($settings-map, 'property')} : rem($value) ;
+                    } @else {
+                        #{ map-get($settings-map, 'property')} : $value ;
+                    }
+                }
+            }
+        }
+    }
+
+    @if map-get($settings-map, 'focus') == true {
+        @each $name, $value in $values-map {
+            @if map_has_key($settings-map, 'classname') {
+                .focus__#{ map-get($settings-map, 'classname')}-#{$name} {
+                    @if $userem == true {
+                        #{ map-get($settings-map, 'property')} : rem($value) ;
+                    } @else {
+                        #{ map-get($settings-map, 'property')} : $value ;
+                    }
+                }
+            } @else {
+                .focus__#{$name} {
+                    @if $userem == true {
+                        #{ map-get($settings-map, 'property')} : rem($value) ;
+                    } @else {
+                        #{ map-get($settings-map, 'property')} : $value ;
+                    }
+                }
+            }
+        }
+    }
+
+}

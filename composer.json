@@ -1,0 +1,33 @@
+{
+    "name": "getkirby/plainkit",
+    "description": "Kirby Plainkit",
+    "type": "project",
+    "keywords": ["kirby", "cms", "starterkit"],
+    "homepage": "https://getkirby.com",
+    "authors": [
+        {
+            "name": "Bastian Allgeier",
+            "email": "bastian@getkirby.com",
+            "homepage": "https://getkirby.com"
+        }
+    ],
+    "support": {
+        "email": "support@getkirby.com",
+        "issues": "https://github.com/getkirby/starterkit/issues",
+        "forum": "https://forum.getkirby.com",
+        "source": "https://github.com/getkirby/starterkit"
+    },
+    "require": {
+        "php": ">=7.1.0",
+        "getkirby/cms": "^3.0",
+        "timoetting/kirby-builder": "^2.0",
+        "bnomei/kirby3-security-headers": "^1.1",
+        "oblik/kirby-easyvars": "^1.0",
+        "diverently/laravel-mix-kirby": "^1.1",
+        "k-community/markdown-field": "^1.0",
+        "mzur/kirby-uniform": "4.0"
+    },
+    "config": {
+        "optimize-autoloader": true
+    }
+}
