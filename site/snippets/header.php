@@ -12,7 +12,7 @@
             <link rel="alternate" hreflang="<?= $lang->code() ?>" href="<?= $page->url($lang->code()) ?>" />
         <?php endforeach; ?>
     <?php endif; ?>
-
+    <?php snippet('meta');?>
 
     <link rel="stylesheet" href="<?= mix('/main.css') ?>">
 

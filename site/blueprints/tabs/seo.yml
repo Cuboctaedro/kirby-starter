@@ -20,6 +20,9 @@ columns:
                     label:
                         en: Image
                         el: Εικόνα
+                authortwitter:
+                    type: text
+                    label: Author Twitter Username
   - width: 1/3
     sections:
         pagefiles:

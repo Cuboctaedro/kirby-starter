@@ -29,4 +29,11 @@ tabs:
             sections:
                 pagefiles:
                     extends: sections/pagefiles
+                siteseo:
+                    type: fields
+                    fields:
+                        sitetwitter:
+                            type: text
+                            label: Site Twitter Username
+
     seo: tabs/seo
