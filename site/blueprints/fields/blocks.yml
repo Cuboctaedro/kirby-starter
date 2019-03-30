@@ -4,16 +4,12 @@ label:
 type: builder
 fieldsets:
     textblock:
-        preview:
-            snippet: blocks/textblock
-            css: /assets/app.css
+        label:
+            en: Text
+            el: Κείμενο
         fields:
-            text:
-                extends: fields/fulleditor
+            text: fields/blockeditor
     headingblock:
-        preview:
-            snippet: blocks/headingblock
-            css: /assets/app.css
         label:
             en: Heading
             el: Τίτλος
@@ -24,9 +20,6 @@ fieldsets:
         label:
             en: Subheading
             el: Υπότιτλος
-        preview:
-            snippet: blocks/subheadingblock
-            css: /assets/app.css
         fields:
             subheading:
                 type: text
@@ -34,12 +27,8 @@ fieldsets:
         label:
             en: Picture
             el: Εικόνα
-        preview:
-            snippet: blocks/imageblock
-            css: /assets/app.css
         fields:
-            image:
-                extends: fields/image
+            image: fields/image
             caption:
                 extends: fields/plaineditor
                 label:
@@ -49,12 +38,8 @@ fieldsets:
         label:
             en: Quote
             el: Παράθεση
-        preview:
-            snippet: blocks/quoteblock
-            css: /assets/app.css
         fields:
-            quote:
-                extends: fields/plaineditor
+            quote: fields/plaineditor
             source:
                 extends: fields/plaineditor
                 label:
@@ -62,9 +47,6 @@ fieldsets:
                     el: Πηγή
     embedblock:
         label: Video
-        preview:
-            snippet: blocks/embedblock
-            css: /assets/app.css
         fields:
             code:
                 extends: fields/plaineditor
