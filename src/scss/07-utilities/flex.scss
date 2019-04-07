@@ -1,0 +1,47 @@
+$flex-settings: (
+    'responsive': true,
+    'hover':      false,
+    'focus':      false,
+    'classname':  'flex',
+    'property':   'flex'
+);
+
+$flex-values: (
+    '1':       1,
+    'auto': auto,
+    'none': none
+);
+
+@include utility($flex-settings, $flex-values);
+
+
+$flex-grow-settings: (
+    'responsive': true,
+    'hover':      false,
+    'focus':      false,
+    'classname':  'flex',
+    'property':   'flex-grow'
+);
+
+$flex-grow-values: (
+    'grow':    1,
+    'no-grow': 0
+);
+
+@include utility($flex-grow-settings, $flex-grow-values);
+
+
+$flex-shrink-settings: (
+    'responsive': true,
+    'hover':      false,
+    'focus':      false,
+    'classname':  'flex',
+    'property':   'flex-shrink'
+);
+
+$flex-shrink-values: (
+    'shrink':    1,
+    'no-shrink': 0
+);
+
+@include utility($flex-shrink-settings, $flex-shrink-values);

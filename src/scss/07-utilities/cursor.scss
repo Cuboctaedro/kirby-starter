@@ -1,0 +1,17 @@
+
+$cursor-settings: (
+    'responsive': false,
+    'hover':      true,
+    'focus':      true,
+    'classname':  'cursor',
+    'property':   'cursor'
+);
+
+$cursor-values: (
+    'pointer':     pointer,
+    'default':     default,
+    'not-allowed': not-allowed,
+    'move':        move
+);
+
+@include utility($cursor-settings, $cursor-values);

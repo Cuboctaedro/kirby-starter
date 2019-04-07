@@ -1,0 +1,18 @@
+$justify-content-settings: (
+    'responsive'         : true,
+    'hover'              : false,
+    'focus'              : false,
+    'classname'          : 'justify',
+    'property'           : 'justify-content'
+);
+
+$justify-content-values  : (
+    'start'              : flex-start,
+    'center'             : center,
+    'end'                : flex-end,
+    'between'            : space-between,
+    'around'             : space-around
+
+);
+
+@include utility($justify-content-settings, $justify-content-values);
