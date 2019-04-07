@@ -12,10 +12,8 @@ tabs:
                 content:
                     type: fields
                     fields:
-                        text: fields/fulleditor
-                        subtitle:
-                            type: text
-                            label: Subtitle
+                        text:
+                            extends: fields/fulleditor
           - width: 1/3
             sections:
                 pagefiles:

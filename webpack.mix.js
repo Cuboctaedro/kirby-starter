@@ -1,10 +1,11 @@
 let mix = require('laravel-mix');
+require('laravel-mix-purgecss');
 
 mix.setPublicPath("assets")
-mix.browserSync("greenrock.test")
+mix.browserSync("kirby-starter.test")
 mix
     .sourceMaps()
-    // .js("src/app.js", "assets")
+    .js("src/app.js", "assets")
     .copyDirectory("src/images", "assets/images")
     .sass("src/app.scss", "assets")
     .options({
@@ -16,6 +17,10 @@ mix
                  ]
              }
          }
+    })
+    .purgeCss({
+        folders: ['site/templates', 'site/snippets', 'site/snippets/form', 'site/snippets/nav'],
+        whitelist: ['is-active']
     })
     .version()
 

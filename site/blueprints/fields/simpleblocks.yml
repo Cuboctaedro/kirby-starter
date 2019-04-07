@@ -8,7 +8,8 @@ fieldsets:
             en: Text
             el: Κείμενο
         fields:
-            text: fields/blockeditor
+            text:
+                extends: fields/blockeditor
     headingblock:
         label:
             en: Heading

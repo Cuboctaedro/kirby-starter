@@ -8,7 +8,8 @@ fieldsets:
             en: Text
             el: Κείμενο
         fields:
-            text: fields/blockeditor
+            text:
+                extends: fields/blockeditor
     headingblock:
         label:
             en: Heading
@@ -28,7 +29,8 @@ fieldsets:
             en: Picture
             el: Εικόνα
         fields:
-            image: fields/image
+            image:
+                extends: fields/image
             caption:
                 extends: fields/plaineditor
                 label:
@@ -39,7 +41,8 @@ fieldsets:
             en: Quote
             el: Παράθεση
         fields:
-            quote: fields/plaineditor
+            quote:
+                extends: fields/plaineditor
             source:
                 extends: fields/plaineditor
                 label:

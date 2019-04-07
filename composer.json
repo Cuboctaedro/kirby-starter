@@ -21,8 +21,6 @@
         "php": ">=7.1.0",
         "getkirby/cms": "^3.0",
         "timoetting/kirby-builder": "^2.0",
-        "bnomei/kirby3-security-headers": "^1.1",
-        "oblik/kirby-easyvars": "^1.0",
         "diverently/laravel-mix-kirby": "^1.1",
         "k-community/markdown-field": "^1.0",
         "mzur/kirby-uniform": "4.0"

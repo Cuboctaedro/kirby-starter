@@ -12,7 +12,8 @@ tabs:
                 content:
                     type: fields
                     fields:
-                        contentblocks: fields/simpleblocks
+                        contentblocks:
+                            extends: fields/simpleblocks
 
           - width: 1/3
             sections:

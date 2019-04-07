@@ -2,8 +2,12 @@ label:
     en: Text
     el: Κείμενο
 type: markdown
-invisibles: true
+invisibles: false
 size: medium
+font:
+    family: sans-serif
+    scaling: true
+    size: regular
 buttons:
   - bold
   - italic
