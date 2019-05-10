@@ -3,22 +3,10 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    & > * {
-        padding-left: rem(8);
-        padding-right: rem(8);
-        margin-bottom: rem(16);
-    }
-    @include mq('lg') {
-        & > * {
-            padding-left: rem(16);
-            padding-right: rem(16);
-            margin-bottom: rem(32);
-        }
-    }
 }
 
 
-.grid--item {
+.grid--gutter {
     padding-left: rem(map-get($gutter, 'base') / 2);
     padding-right: rem(map-get($gutter, 'base') / 2);
     margin-bottom: rem(map-get($gutter, 'base') );

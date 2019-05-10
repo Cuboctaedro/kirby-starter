@@ -1,16 +1,16 @@
 // Centers the contents of the element horizontaly, verticaly or in both directions.
 
-.centered-h {
+.frame-h {
     display: flex;
     justify-content: center;
 }
 
-.centered-v {
+.frame-v {
     display: flex;
     align-items: center;
 }
 
-.centered {
+.frame {
     display: flex;
     align-items: center;
     justify-content: center;

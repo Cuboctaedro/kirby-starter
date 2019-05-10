@@ -1,0 +1,51 @@
+@mixin heading-1 {
+    font-family: map-get($font-families, 'titles');
+    font-weight: 400;
+    color: map-get($colors, 'green');
+    @include typesize(24, 24);
+    @include mq('lg') {
+        @include typesize(36, 36);
+    };
+}
+
+.heading-1 {
+    @include heading-1;
+}
+
+
+@mixin heading-2 {
+    font-family: map-get($font-families, 'titles');
+    font-weight: 400;
+    color: map-get($colors, 'green');
+    @include typesize(24, 32);
+}
+
+.heading-2 {
+    @include heading-2;
+}
+
+@mixin heading-3 {
+    font-family: map-get($font-families, 'titles');
+    font-weight: 600;
+    @include typesize(20, 24);
+    @include mq('lg') {
+        @include typesize(24, 36);
+    };
+}
+
+.heading-3 {
+    @include heading-3;
+}
+
+@mixin heading-4 {
+    font-family: map-get($font-families, 'titles');
+    font-weight: 600;
+    @include typesize(18, 24);
+    @include mq('md') {
+        @include typesize(20, 24);
+    };
+}
+
+.heading-4 {
+    @include heading-4;
+}

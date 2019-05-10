@@ -1,0 +1,11 @@
+
+$box-shadow-settings:  (
+    'responsive': true,
+    'hover':      true,
+    'focus':      true,
+    'classname':  'shadow',
+    'property':   'box-shadow'
+);
+
+
+@include utility($box-shadow-settings, $box-shadows);
