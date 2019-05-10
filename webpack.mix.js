@@ -7,6 +7,7 @@ mix
     .sourceMaps()
     .js("src/app.js", "assets")
     .copyDirectory("src/images", "assets/images")
+    .copyDirectory("src/fonts", "assets/fonts")
     .sass("src/app.scss", "assets")
     .options({
         processCssUrls: false,

@@ -20,6 +20,7 @@
     "browser-sync": "^2.26.3",
     "browser-sync-webpack-plugin": "^2.0.1",
     "sass": "^1.17.3",
-    "sass-loader": "^7.1.0"
+    "sass-loader": "^7.1.0",
+    "vue-template-compiler": "^2.6.10"
   }
 }
