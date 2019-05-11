@@ -1,0 +1,14 @@
+// <button class="close-button" data-close-target=".some-target" aria-label="close <?= $target-name ?>">
+//     <?php snippet('icons/close')?>
+// </button>
+
+
+.close-button {
+    width: rem(24);
+    height: rem(24);
+    background-color: transparent;
+    border: 0 none;
+    :focus {
+        box-shadow: map-get($box-shadows, 'outline');
+    }
+}

@@ -35,5 +35,18 @@ tabs:
                         sitetwitter:
                             type: text
                             label: Site Twitter Username
-
-    seo: tabs/seo
+                        facebook:
+                            type: url
+                            label: Facebook Page
+                        twitter:
+                            type: url
+                            label: Site Twitter Page
+                        instagram:
+                            type: url
+                            label: Instagram Page
+                        pinterest:
+                            type: url
+                            label: Pinterest Page
+                        linkedin:
+                            type: url
+                            label: LinkedIn Page

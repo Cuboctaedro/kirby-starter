@@ -1,0 +1,36 @@
+// <div class="alert" title="Alert Title" id="some-id">
+//     <button class="close-button alert__close" data-close-target="#some-id" aria-label="close Alert Title">
+//         <?php snippet('icons/close')?>
+//     </button>
+//     <div class="alert__content">Content</div>
+// </div>
+
+.alert {
+    padding: rem(12) rem(36) rem(12) rem(12);
+    @include typesize(14, 18);
+    @include mq('sm') {
+        @include typesize(16, 24);
+    }
+    &__close {
+        position: absolute;
+        top: rem(12);
+        right: rem(12);
+    }
+    &--main {
+        color: map-get($colors, 'black');
+        background-color: map-get($colors, 'grey-lightest');
+    }
+    &--success {
+        color: map-get($colors, 'green');
+        background-color: map-get($colors, 'green-lightest');
+    }
+    &--warn {
+        color: map-get($colors, 'yellow');
+        background-color: map-get($colors, 'yellow-lightest');
+    }
+    &--error {
+        color: map-get($colors, 'red');
+        background-color: map-get($colors, 'red-lightest');
+    }
+
+}
