@@ -13,13 +13,6 @@ columns:
                         el: Περιγραφή
                     buttons: false
                     size: small
-                featuredimage:
-                    type: files
-                    layout: cards
-                    multiple: false
-                    label:
-                        en: Image
-                        el: Εικόνα
                 authortwitter:
                     type: text
                     label: Author Twitter Username

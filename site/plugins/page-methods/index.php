@@ -22,6 +22,16 @@ Kirby::plugin('objecteam/page-methods', [
             } else {
                 return $this->summary();
             }
-        }
+        },
+        'coverimage' => function() {
+            if($this->featuredimage()->exists() and $this->featuredimage()->isNotEmpty()) {
+                return $this->featuredimage()->toFile();
+            } elseif($this->hasImages()) {
+                return $this->images()->first();
+            } else {
+                return false;
+            }
+        },
+
     ]
 ]);

@@ -12,9 +12,9 @@ use Kirby\Toolkit\F;
  *
  * @package   Kirby Data
  * @author    Bastian Allgeier <bastian@getkirby.com>
- * @link      http://getkirby.com
- * @copyright Bastian Allgeier
- * @license   MIT
+ * @link      https://getkirby.com
+ * @copyright Bastian Allgeier GmbH
+ * @license   https://opensource.org/licenses/MIT
  */
 abstract class Handler
 {
@@ -32,10 +32,10 @@ abstract class Handler
     /**
      * Converts an array to an encoded string
      *
-     * @param  array  $data
+     * @param  mixed  $data
      * @return string
      */
-    abstract public static function encode(array $data): string;
+    abstract public static function encode($data): string;
 
     /**
      * Reads data from a file
@@ -45,7 +45,7 @@ abstract class Handler
      */
     public static function read(string $file): array
     {
-        if (file_exists($file) !== true) {
+        if (is_file($file) !== true) {
             throw new Exception('The file "' . $file . '" does not exist');
         }
 
@@ -53,11 +53,9 @@ abstract class Handler
     }
 
     /**
-     * Writes data to a file.
-     * The data handler is automatically chosen by
-     * the extension if not specified.
+     * Writes data to a file
      *
-     * @param  array    $data
+     * @param  array   $data
      * @return boolean
      */
     public static function write(string $file = null, array $data = []): bool

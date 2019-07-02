@@ -1,9 +1,7 @@
 <?php
 
-use Kirby\Cms\App;
 use Kirby\Cms\Blueprint;
 use Kirby\Toolkit\A;
-use Kirby\Toolkit\F;
 use Kirby\Toolkit\Str;
 
 return [
@@ -37,7 +35,7 @@ return [
             return $info;
         },
         /**
-         * The size option controls the size of cards. By default cards are auto-sized and the cards grid will always fill the full width. With a size you can disable auto-sizing. Available sizes: tiny, small, medium, large
+         * The size option controls the size of cards. By default cards are auto-sized and the cards grid will always fill the full width. With a size you can disable auto-sizing. Available sizes: `tiny`, `small`, `medium`, `large`, `huge`
          */
         'size' => function (string $size = 'auto') {
             return $size;
@@ -49,13 +47,13 @@ return [
             return $sortable;
         },
         /**
-         * Overwrites manual sorting and sorts by the given field and sorting direction (i.e. date desc)
+         * Overwrites manual sorting and sorts by the given field and sorting direction (i.e. `date desc`)
          */
         'sortBy' => function (string $sortBy = null) {
             return $sortBy;
         },
         /**
-         * Filters pages by their status. Available status settings: draft, unlisted, listed, published, all.
+         * Filters pages by their status. Available status settings: `draft`, `unlisted`, `listed`, `published`, `all`.
          */
         'status' => function (string $status = '') {
             if ($status === 'drafts') {
@@ -141,22 +139,9 @@ return [
         'data' => function () {
             $data = [];
 
-            if ($this->layout === 'list') {
-                $thumb = [
-                    'width'  => 100,
-                    'height' => 100
-                ];
-            } else {
-                $thumb = [
-                    'width'  => 400,
-                    'height' => 400
-                ];
-            }
-
             foreach ($this->pages as $item) {
                 $permissions = $item->permissions();
-                $blueprint   = $item->blueprint();
-                $image       = $item->panelImage($this->image, $thumb);
+                $image       = $item->panelImage($this->image);
 
                 $data[] = [
                     'id'          => $item->id(),
@@ -188,7 +173,7 @@ return [
             }
 
             if ($this->validateMin() === false) {
-                $errors['min'] = I18n::template('error.section.pages.min.' . I18n::form($this->max), [
+                $errors['min'] = I18n::template('error.section.pages.min.' . I18n::form($this->min), [
                     'min'     => $this->min,
                     'section' => $this->headline
                 ]);
@@ -228,7 +213,7 @@ return [
             return $this->pagination();
         },
         'sortable' => function () {
-            if ($this->status !== 'listed' && $this->status !== 'all') {
+            if (in_array($this->status, ['listed', 'published', 'all']) === false) {
                 return false;
             }
 
@@ -249,9 +234,7 @@ return [
             $templates  = empty($this->create) === false ? $this->create : $this->templates;
 
             if (empty($templates) === true) {
-                foreach (glob(App::instance()->root('blueprints') . '/pages/*.yml') as $blueprint) {
-                    $templates[] = F::name($blueprint);
-                }
+                $templates = $this->kirby()->blueprints();
             }
 
             // convert every template to a usable option array
@@ -283,8 +266,11 @@ return [
                 'add'      => $this->add,
                 'empty'    => $this->empty,
                 'headline' => $this->headline,
+                'help'     => $this->help,
                 'layout'   => $this->layout,
                 'link'     => $this->link,
+                'max'      => $this->max,
+                'min'      => $this->min,
                 'size'     => $this->size,
                 'sortable' => $this->sortable
             ],

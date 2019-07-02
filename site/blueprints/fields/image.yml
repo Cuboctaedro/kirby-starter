@@ -1,6 +1,4 @@
-label:
-    en: Image
-    el: Εικόνα
+label: Image
 type: files
 layout: cards
 multiple: false

@@ -2,4 +2,4 @@ label:
     en: Gallery
     el: Συλλογή εικόνων
 type: files
-layout: cards
+layout: list

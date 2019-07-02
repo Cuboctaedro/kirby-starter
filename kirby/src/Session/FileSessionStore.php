@@ -12,9 +12,9 @@ use Kirby\Toolkit\Str;
 /**
  * @package   Kirby Session
  * @author    Lukas Bestle <lukas@getkirby.com>
- * @link      http://getkirby.com
- * @copyright Bastian Allgeier
- * @license   MIT
+ * @link      https://getkirby.com
+ * @copyright Bastian Allgeier GmbH
+ * @license   https://opensource.org/licenses/MIT
  */
 class FileSessionStore extends SessionStore
 {
@@ -352,7 +352,7 @@ class FileSessionStore extends SessionStore
         foreach ($iterator as $file) {
             // make sure that the file is a session file
             // prevents deleting files like .gitignore or other unrelated files
-            if (preg_match('/[0-9]+\.[a-z0-9]+\.sess/', $file->getFilename()) !== 1) {
+            if (preg_match('/^[0-9]+\.[a-z0-9]+\.sess$/', $file->getFilename()) !== 1) {
                 continue;
             }
 
@@ -364,15 +364,14 @@ class FileSessionStore extends SessionStore
             if ($expiryTime < $currentTime) {
                 // the session has expired, delete it
                 $this->destroy($expiryTime, $id);
-            } else {
-                // the following files are all going to be still valid
-                break;
             }
         }
     }
 
     /**
      * Cleans up the open locks and file handles
+     *
+     * @codeCoverageIgnore
      */
     public function __destruct()
     {

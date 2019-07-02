@@ -1,6 +1,4 @@
 type: files
 layout: cards
 template: image
-headline:
-    en: Images
-    el: Εικόνες
+headline: Images

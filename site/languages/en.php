@@ -1,10 +1,10 @@
 <?php
 
-return [
-    'code' => 'en',
-    'default' => true,
-    'direction' => 'ltr',
-    'locale' => 'en_US',
-    'name' => 'English',
-    'translations' => include option('oblik.easyvars.loader')
-];
+return array (
+  'code' => 'en',
+  'direction' => 'ltr',
+  'locale' => 'en_US',
+  'name' => 'English',
+  'url' => 'en',
+  'translations' => include option('oblik.easyvars.loader')
+);

@@ -16,7 +16,7 @@ use Kirby\Toolkit\View;
  * Helper to create an asset object
  *
  * @param string $path
- * @return Asset
+ * @return Kirby\Cms\Asset
  */
 function asset(string $path)
 {
@@ -44,7 +44,7 @@ function attr(array $attr = null, $before = null, $after = null)
  * Returns the result of a collection by name
  *
  * @param string $name
- * @return Collection|null
+ * @return Kirby\Cms\Collection|null
  */
 function collection(string $name)
 {
@@ -105,16 +105,13 @@ function css($url, $options = null)
 
     $kirby = App::instance();
 
-    if ($component = $kirby->component('css')) {
-        $url = $component($kirby, $url, $options);
-    }
-
     if ($url === '@auto') {
         if (!$url = Url::toTemplateAsset('css/templates', 'css')) {
             return null;
         }
     }
 
+    $url  = $kirby->component('css')($kirby, $url, $options);
     $url  = Url::to($url);
     $attr = array_merge((array)$options, [
         'href' => $url,
@@ -249,7 +246,7 @@ function html(string $string = null, bool $keepTags = false)
  * <?= image('some/page/myimage.jpg') ?>
  *
  * @param string $path
- * @return File|null
+ * @return Kirby\Cms\File|null
  */
 function image(string $path = null)
 {
@@ -264,10 +261,20 @@ function image(string $path = null)
         $uri = null;
     }
 
-    $page = $uri === '/' ? site() : page($uri);
+    switch ($uri) {
+        case '/':
+            $parent = site();
+            break;
+        case null:
+            $parent = page();
+            break;
+        default:
+            $parent = page($uri);
+            break;
+    }
 
-    if ($page) {
-        return $page->image($filename);
+    if ($parent) {
+        return $parent->image($filename);
     } else {
         return null;
     }
@@ -359,16 +366,13 @@ function js($url, $options = null)
 
     $kirby = App::instance();
 
-    if ($component = $kirby->component('js')) {
-        $url = $component($kirby, $url, $options);
-    }
-
     if ($url === '@auto') {
         if (!$url = Url::toTemplateAsset('js/templates', 'js')) {
             return null;
         }
     }
 
+    $url  = $kirby->component('js')($kirby, $url, $options);
     $url  = Url::to($url);
     $attr = array_merge((array)$options, ['src' => $url]);
 
@@ -378,9 +382,9 @@ function js($url, $options = null)
 /**
  * Returns the Kirby object in any situation
  *
- * @return App
+ * @return Kirby\Cms\App
  */
-function kirby(): App
+function kirby()
 {
     return App::instance();
 }
@@ -523,7 +527,7 @@ function option(string $key, $default = null)
  * id or the current page when no id is specified
  *
  * @param string|array ...$id
- * @return Page|null
+ * @return Kirby\Cms\Page|null
  */
 function page(...$id)
 {
@@ -538,7 +542,7 @@ function page(...$id)
  * Helper to build page collections
  *
  * @param string|array ...$id
- * @return Pages
+ * @return Kirby\Cms\Pages
  */
 function pages(...$id)
 {
@@ -612,7 +616,7 @@ function timestamp(string $date = null, int $step = null): ?string
 /**
  * Returns the currrent site object
  *
- * @return Site
+ * @return Kirby\Cms\Site
  */
 function site()
 {
@@ -665,12 +669,12 @@ function smartypants(string $text = null): string
 /**
  * Embeds a snippet from the snippet folder
  *
- * @param string $name
+ * @param string|array $name
  * @param array|object $data
  * @param boolean $return
  * @return string
  */
-function snippet(string $name, $data = [], bool $return = false)
+function snippet($name, $data = [], bool $return = false)
 {
     if (is_object($data) === true) {
         $data = ['item' => $data];
@@ -711,12 +715,7 @@ function svg(string $file)
         }
     }
 
-    ob_start();
-    include $file;
-    $svg = ob_get_contents();
-    ob_end_clean();
-
-    return $svg;
+    return F::read($file);
 }
 
 /**
@@ -741,6 +740,21 @@ function t($key, string $fallback = null)
 function tc($key, int $count)
 {
     return I18n::translateCount($key, $count);
+}
+
+/**
+ * Translate by key and then replace
+ * placeholders in the text
+ *
+ * @param string $key
+ * @param string $fallback
+ * @param array $replace
+ * @param string $locale
+ * @return string
+ */
+function tt(string $key, $fallback = null, array $replace = null, string $locale = null)
+{
+    return I18n::template($key, $fallback, $replace, $locale);
 }
 
 /**

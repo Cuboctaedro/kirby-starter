@@ -1,0 +1,33 @@
+title: Article Page
+
+tabs:
+    content:
+        label: Content
+        icon: text
+        columns:
+          - width: 2/3
+            sections:
+                content:
+                    type: fields
+                    fields:
+                        text:
+                            extends: fields/fulleditor
+                        date:
+                            type: date
+                            label: Date
+                        tags:
+                            label: Tags
+                            type: tags
+                        featuredimage:
+                            type: files
+                            layout: cards
+                            multiple: false
+                            label: Featured Image
+                        gallery:
+                            extends: fields/gallery
+          - width: 1/3
+            sections:
+                pagefiles:
+                    extends: sections/pagefiles
+
+    seo: tabs/seo

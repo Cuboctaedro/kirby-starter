@@ -2,6 +2,15 @@
 
 namespace Kirby\Cms;
 
+/**
+ * PageSiblings
+ *
+ * @package   Kirby Cms
+ * @author    Bastian Allgeier <bastian@getkirby.com>
+ * @link      https://getkirby.com
+ * @copyright Bastian Allgeier GmbH
+ * @license   https://getkirby.com/license
+ */
 trait PageSiblings
 {
 
@@ -26,15 +35,6 @@ trait PageSiblings
     }
 
     /**
-     * @deprecated Use `Page::hasNextListed` instead
-     * @return boolean
-     */
-    public function hasNextVisible(): bool
-    {
-        return $this->hasNextListed();
-    }
-
-    /**
      * Checks if there's a next unlisted
      * page in the siblings collection
      *
@@ -46,7 +46,16 @@ trait PageSiblings
     }
 
     /**
-     * @deprecated Use `Page::hasPrevUnlisted` instead
+     * @deprecated 3.0.0 Use `Page::hasNextListed` instead
+     * @return boolean
+     */
+    public function hasNextVisible(): bool
+    {
+        return $this->hasNextListed();
+    }
+
+    /**
+     * @deprecated 3.0.0 Use `Page::hasPrevUnlisted` instead
      * @return boolean
      */
     public function hasPrevInvisible(): bool
@@ -77,7 +86,7 @@ trait PageSiblings
     }
 
     /**
-     * @deprecated Use `Page::hasPrevListed instead`
+     * @deprecated 3.0.0 Use `Page::hasPrevListed instead`
      * @return boolean
      */
     public function hasPrevVisible(): bool
@@ -86,7 +95,7 @@ trait PageSiblings
     }
 
     /**
-     * @deprecated Use `Page::nextUnlisted()` instead
+     * @deprecated 3.0.0 Use `Page::nextUnlisted()` instead
      * @return self|null
      */
     public function nextInvisible()
@@ -97,7 +106,7 @@ trait PageSiblings
     /**
      * Returns the next listed page if it exists
      *
-     * @return self|null
+     * @return Kirby\Cms\Page|null
      */
     public function nextListed()
     {
@@ -107,7 +116,7 @@ trait PageSiblings
     /**
      * Returns the next unlisted page if it exists
      *
-     * @return self|null
+     * @return Kirby\Cms\Page|null
      */
     public function nextUnlisted()
     {
@@ -115,7 +124,7 @@ trait PageSiblings
     }
 
     /**
-     * @deprecated Use `Page::prevListed()` instead
+     * @deprecated 3.0.0 Use `Page::prevListed()` instead
      * @return self|null
      */
     public function nextVisible()
@@ -124,7 +133,7 @@ trait PageSiblings
     }
 
     /**
-     * @deprecated Use `Page::prevUnlisted()` instead
+     * @deprecated 3.0.0 Use `Page::prevUnlisted()` instead
      * @return self|null
      */
     public function prevInvisible()
@@ -135,7 +144,7 @@ trait PageSiblings
     /**
      * Returns the previous listed page
      *
-     * @return self|null
+     * @return Kirby\Cms\Page|null
      */
     public function prevListed()
     {
@@ -145,7 +154,7 @@ trait PageSiblings
     /**
      * Returns the previous unlisted page
      *
-     * @return self|null
+     * @return Kirby\Cms\Page|null
      */
     public function prevUnlisted()
     {
@@ -153,7 +162,7 @@ trait PageSiblings
     }
 
     /**
-     * @deprecated Use `Page::prevListed()` instead
+     * @deprecated 3.0.0 Use `Page::prevListed()` instead
      * @return self|null
      */
     public function prevVisible()
@@ -164,7 +173,7 @@ trait PageSiblings
     /**
      * Private siblings collector
      *
-     * @return Collection
+     * @return Kirby\Cms\Collection
      */
     protected function siblingsCollection()
     {
@@ -179,7 +188,7 @@ trait PageSiblings
      * Returns siblings with the same template
      *
      * @param bool $self
-     * @return self
+     * @return Kirby\Cms\Pages
      */
     public function templateSiblings(bool $self = true)
     {
