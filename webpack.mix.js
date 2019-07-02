@@ -9,7 +9,11 @@ mix
     .copyDirectory("src/images", "assets/images")
     .copyDirectory("src/fonts", "assets/fonts")
     .postCss('src/css/app.css', 'assets', [
+        require('postcss-import'),
         require('tailwindcss'),
+        // require('postcss-nesting'),
+        // require('postcss-custom-properties'),
+
     ])
     .options({
          processCssUrls: false
