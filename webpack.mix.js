@@ -11,8 +11,8 @@ mix
     .postCss('src/css/app.css', 'assets', [
         require('postcss-import'),
         require('tailwindcss'),
-        // require('postcss-nesting'),
-        // require('postcss-custom-properties'),
+        require('postcss-nesting'),
+        require('postcss-custom-properties'),
 
     ])
     .options({

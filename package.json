@@ -15,12 +15,14 @@
         "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
     },
     "devDependencies": {
+        "browser-sync": "^2.26.3",
+        "browser-sync-webpack-plugin": "^2.0.1",
         "cross-env": "^5.2.0",
         "laravel-mix": "^4.0.15",
         "laravel-mix-purgecss": "^4.1.0",
-        "browser-sync": "^2.26.3",
-        "browser-sync-webpack-plugin": "^2.0.1",
+        "postcss-custom-properties": "^9.0.1",
         "postcss-import": "^12.0.1",
+        "postcss-nesting": "^7.0.0",
         "sass": "^1.17.3",
         "sass-loader": "^7.1.0",
         "tailwindcss": "^1.0.2",

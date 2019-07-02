@@ -1,5 +1,4 @@
 import 'lazysizes';
-import baguetteBox from 'baguettebox.js';
 
 function addClass(el, className) {
     if (el.classList) {
@@ -102,9 +101,3 @@ function toggleSubmenu() {
 }
 
 toggleSubmenu();
-
-
-baguetteBox.run('.imagegallery', {
-    animation: 'fadeIn',
-    noScrollbars: true
-});
